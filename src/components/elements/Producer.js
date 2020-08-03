@@ -6,8 +6,8 @@ class Producer extends React.Component {
 
     state = {
         loaded:false,
-        title:"DuPont",
-        seo_url:"dupont",
+        title:"",
+        seo_url:"",
         brands_count:0,
         products_count:0,
         hq:"United States",
