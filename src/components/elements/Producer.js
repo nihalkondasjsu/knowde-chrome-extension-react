@@ -8,9 +8,9 @@ class Producer extends React.Component {
         loaded:false,
         title:"",
         seo_url:"",
-        brands_count:0,
-        products_count:0,
-        hq:"United States",
+        brands_count:"",
+        products_count:"",
+        hq:"",
         logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
         picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
     }

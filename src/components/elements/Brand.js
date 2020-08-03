@@ -8,7 +8,7 @@ class Brand extends React.Component {
         title:"",
         seo_url:"",
         short_description:"",
-        products_count:0,
+        products_count:"",
         product_categories:[],
         logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
         picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
