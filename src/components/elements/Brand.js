@@ -11,13 +11,14 @@ class Brand extends React.Component {
         products_count:"",
         product_categories:[],
         logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
-        picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
+        picture:"https://www.transparenttextures.com/patterns/asfalt-light.png",
+        display:'inline-block'
     }
 
     loadContent(json){
         try {
-            if(!json["total_count"])return
-            if(json["total_count"]===0)return
+            if(!json["total_count"])throw new Error('NotFound')
+            if(json["total_count"]===0)throw new Error('NotFound')
             json = json["data"]["hits"]["hits"][0]
             const source = json["_source"]
             
@@ -46,6 +47,9 @@ class Brand extends React.Component {
 
         } catch (error) {
             console.log(error)
+            this.setState({
+                display:'none'
+            })
         }
     }
 
@@ -101,7 +105,7 @@ class Brand extends React.Component {
     render(){
         const optionalBr = this.state.short_description === "" ? <noscript /> : <br/>
         return (
-            <div className="card" style={{display:this.state.loaded?'inline-block':'none'}}  onClick={this.openSeoUrl}>
+            <div className="card" style={{display:this.state.display}} onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>
