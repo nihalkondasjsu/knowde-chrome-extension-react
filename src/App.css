@@ -32,6 +32,7 @@
     height:100%;
     object-fit: cover;
     object-position: top;
+    background: #f5f3f5;
 }
 .body{
 	position: relative;
@@ -46,7 +47,8 @@
     height: 90px;
     border-radius: 45px;
     border: 1px solid #e4e4e4;
-    background-color: #fff;
+    background-color: #e4e4e4;
+    
     overflow: hidden;
     display: -webkit-box;
     display: flex;
