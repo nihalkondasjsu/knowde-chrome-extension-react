@@ -5,12 +5,12 @@ class Product extends React.Component {
 
     state = {
         loaded:false,
-        title:"Crodamol CAP",
-        seo_url:"crodamol-cap",
+        title:"",
+        seo_url:"",
         incis:[],
         categories:[],
-        logo:"https://res.cloudinary.com/deb7dco1z/image/upload/w_128/v1595957116648/production/Product/91140/logo/image.webp",
-        picture:"https://res.cloudinary.com/deb7dco1z/image/upload/w_512/v1595957116648/production/Product/91140/card_banner/image.webp"
+        logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
+        picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
     }
 
     loadContent(json){
@@ -101,7 +101,7 @@ class Product extends React.Component {
     render(){
             
         return (
-            <div className="card" style={{display:(this.state.loaded?"inline-block":"none")}} onClick={this.openSeoUrl}>
+            <div className="card" onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>

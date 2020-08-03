@@ -11,8 +11,8 @@ class Producer extends React.Component {
         brands_count:0,
         products_count:0,
         hq:"United States",
-        logo:"https://res.cloudinary.com/deb7dco1z/image/upload/w_128/v1595957116648/production/Company/94/logo/image.webp",
-        picture:"https://res.cloudinary.com/deb7dco1z/image/upload/w_512/v1595957116648/production/Company/94/card_banner/image.webp"
+        logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
+        picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
     }
 
     loadContent(json){
@@ -92,7 +92,7 @@ class Producer extends React.Component {
 
     render(){
         return (
-            <div className="card" style={{display:(this.state.loaded?"inline-block":"none")}} onClick={this.openSeoUrl}>
+            <div className="card" onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>

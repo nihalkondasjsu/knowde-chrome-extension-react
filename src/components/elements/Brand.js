@@ -5,13 +5,13 @@ class Brand extends React.Component {
 
     state = {
         loaded:false,
-        title:"Crodamol",
-        seo_url:"crodamol",
+        title:"",
+        seo_url:"",
         short_description:"",
         products_count:0,
         product_categories:[],
-        logo:"https://res.cloudinary.com/deb7dco1z/image/upload/w_128/v1595957116648/production/Brand/3835/logo/image.webp",
-        picture:"https://res.cloudinary.com/deb7dco1z/image/upload/w_512/v1595957116648/production/Brand/3835/card_banner/image.webp"
+        logo:"https://www.transparenttextures.com/patterns/asfalt-light.png",
+        picture:"https://www.transparenttextures.com/patterns/asfalt-light.png"
     }
 
     loadContent(json){
@@ -101,7 +101,7 @@ class Brand extends React.Component {
     render(){
         const optionalBr = this.state.short_description === "" ? <noscript /> : <br/>
         return (
-            <div className="card" style={{display:(this.state.loaded?"inline-block":"none")}} onClick={this.openSeoUrl}>
+            <div className="card" onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>
