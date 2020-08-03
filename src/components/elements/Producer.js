@@ -92,7 +92,7 @@ class Producer extends React.Component {
 
     render(){
         return (
-            <div className="card" onClick={this.openSeoUrl}>
+            <div className="card" style={{display:this.state.loaded?'inline-block':'none'}}  onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>

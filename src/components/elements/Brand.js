@@ -101,7 +101,7 @@ class Brand extends React.Component {
     render(){
         const optionalBr = this.state.short_description === "" ? <noscript /> : <br/>
         return (
-            <div className="card" onClick={this.openSeoUrl}>
+            <div className="card" style={{display:this.state.loaded?'inline-block':'none'}}  onClick={this.openSeoUrl}>
                 <div className="header">
                     <Image className="header-img" src={this.state.picture}/>
                 </div>
