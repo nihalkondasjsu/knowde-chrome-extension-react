@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from './Image';
+import Common from '../utils/Common';
 class Product extends React.Component {
 
     state = {
@@ -87,11 +88,7 @@ class Product extends React.Component {
         })
     }
 
-    ellipsize(text,maxLength){
-        if(!text)return ""
-        if(text.length<=maxLength)return text
-        return text.substring(0,maxLength)+"..."
-    }
+    
     openSeoUrl = () =>{
         if(this.state.loaded === false)
             return
@@ -102,6 +99,7 @@ class Product extends React.Component {
     }
 
     render(){
+            
         return (
             <div className="card" style={{display:(this.state.loaded?"inline-block":"none")}} onClick={this.openSeoUrl}>
                 <div className="header">
@@ -111,9 +109,8 @@ class Product extends React.Component {
                     <Image className="logo-img" src={this.state.logo}/>
                     <p className="title">{this.state.title}</p>
                     <p className="text">
-                        <b>INCIs:&nbsp;</b>{this.ellipsize(this.state.incis.join(', '),70)}
-                        <br/>
-                        <b>Categories:&nbsp;</b>{this.ellipsize(this.state.categories.join(', '),70)}
+                        {Common.conditionalRender("INCIs",this.state.incis.join(', '),70,true)}
+                        {Common.conditionalRender("Categories",this.state.categories.join(', '),70)}
                     </p>
                 </div>
             </div>

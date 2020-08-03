@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from './Image';
+import Common from '../utils/Common';
+
 class Producer extends React.Component {
 
     state = {
@@ -98,11 +100,9 @@ class Producer extends React.Component {
                     <Image className="logo-img" src={this.state.logo}/>
                     <p className="title">{this.state.title}</p>
                     <p className="text">
-                        <b>Brands:&nbsp;</b>{this.state.brands_count}
-                        <br/>
-                        <b>Products:&nbsp;</b>{this.state.products_count}
-                        <br/>
-                        <b>HQ:&nbsp;</b>{this.state.hq}
+                        {Common.conditionalRender("Brands",this.state.brands_count.toString(),70,true)}
+                        {Common.conditionalRender("Products",this.state.products_count.toString(),70,true)}
+                        {Common.conditionalRender("HQ",this.state.hq.toString(),70)}
                     </p>
                 </div>
             </div>

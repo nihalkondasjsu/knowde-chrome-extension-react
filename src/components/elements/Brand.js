@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from './Image';
+import Common from '../utils/Common';
 class Brand extends React.Component {
 
     state = {
@@ -110,8 +111,8 @@ class Brand extends React.Component {
                     <p className="text">
                         {this.ellipsize(this.state.short_description,30)}
                         {optionalBr}
-                        <b>Products:&nbsp;</b>{this.state.products_count}<br/>
-                        <b>Product Category:&nbsp;</b>{this.ellipsize(this.state.product_categories.join(', '),100)}
+                        {Common.conditionalRender("Products",this.state.products_count.toString(),70,true)}
+                        {Common.conditionalRender("Product Category",this.state.product_categories.join(', '),100)}
                     </p>
                 </div>
             </div>
